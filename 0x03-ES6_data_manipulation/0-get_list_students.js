@@ -6,5 +6,4 @@ function getListStudents() {
     ];
 }
 
-const students = getListStudents();
-console.log(students);
+module.exports = getListStudents;
