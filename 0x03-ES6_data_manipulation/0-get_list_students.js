@@ -5,8 +5,3 @@ def getListStudents():
         {"id": 5, "firstName": "Serena", "location": "San Francisco"}
     ]
     return students
-
-# Example usage:
-students_list = getListStudents()
-for student in students_list:
-    print(student)
