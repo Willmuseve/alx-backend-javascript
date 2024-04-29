@@ -1,8 +1,7 @@
-// Define a function named displayMessage
+// Prints in STDOUT the string arg message
 
 function displayMessage(message) {
-	return console.log(message);
+  return console.log(message);
 }
 
-// Export the displayMessage
 module.exports = displayMessage;
