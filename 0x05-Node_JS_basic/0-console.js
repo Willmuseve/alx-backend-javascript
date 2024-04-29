@@ -8,4 +8,3 @@ function displayMessage(message) {
 // Export the displayMessage
 // function to make it accessible from other modules
 module.exports = displayMessage;
-
