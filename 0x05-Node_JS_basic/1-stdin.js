@@ -1,27 +1,15 @@
-// Display initial message
+// Takes user input name from the command line and returns it
 
 process.stdout.write('Welcome to Holberton School, what is your name?\n');
 
-// A function to handle input
-process.stdin.on('data', function(data) {
-    // Extract the input and remove trailing newline character
-    const input = data.toString().trim();
-
-    // Display the user's name
-    console.log('Your name is:', input);
-    
-    // Check if the input is "exit" to end the program
-    if (input.toLowerCase() === 'exit') {
-        console.log('This important software is now closing');
-        // End the process
-        process.exit();
-    }
-    
-    // Prompt for another input
-    process.stdout.write('Welcome to Holberton School, what is your name?\n');
+// Listen for user input
+process.stdin.on('readable', () => {
+  const data = process.stdin.read();
+  if (data !== null) {
+    process.stdout.write(`Your name is: ${data}`);
+  }
 });
 
-// Handle program termination
-process.on('exit', function() {
-    console.log('This important software is now closing');
+process.stdin.on('end', () => {
+  console.log('This important software is now closing');
 });
