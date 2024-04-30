@@ -24,8 +24,10 @@ function countStudents(filepath) {
         if (lines[i]) {
           const fieldsArr = lines[i].toString().split(',');
 
+          // Extract the relevant fields (CS and SWE)
           const field = fieldsArr[3];
 
+          // If the field is either CS or SWE
           if (field === 'CS' || field === 'SWE') {
             fields[field] += 1;
             students[field].push(fieldsArr[0]);
@@ -33,9 +35,10 @@ function countStudents(filepath) {
         }
       }
 
+      // Calculate the total number of students
       const totalStudents = students.CS.length + students.SWE.length;
 
-    
+      // Construct the response string
       let response = `Number of students: ${totalStudents}\n`;
       for (const field in fields) {
         if (Object.prototype.hasOwnProperty.call(fields, field)) {
@@ -54,7 +57,6 @@ const app = http.createServer((req, res) => {
   if (req.url === '/') {
     res.end('Hello Holberton School!');
   } else if (req.url === '/students') {
-
     const filepath = process.argv[2];
     try {
       countStudents(filepath)
@@ -73,6 +75,7 @@ const app = http.createServer((req, res) => {
       res.end('Internal Server Error');
     }
   } else {
+    // Return 404 
     res.statusCode = 404;
     res.end('404 Not Found\n');
   }
