@@ -1,6 +1,5 @@
 const fs = require('fs');
 
-//the func that accepsts an argument
 function countStudents(filepath) {
   try {
     const fileItems = fs.readFileSync(filepath, 'utf-8');
