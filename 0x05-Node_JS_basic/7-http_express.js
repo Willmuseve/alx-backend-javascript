@@ -13,8 +13,8 @@ function countStudents(filepath) {
     SWE: 0,
   };
 
-  const data = fs.readFileSync(filepath, 'utf-8');
-  const lines = data.toString().split('\n');
+  const info = fs.readFileSync(filepath, 'utf-8');
+  const lines = info.toString().split('\n');
 
   for (let i = 0; i < lines.length; i += 1) {
     if (lines[i]) {
