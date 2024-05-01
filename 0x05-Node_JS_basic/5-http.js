@@ -75,7 +75,6 @@ const app = http.createServer((req, res) => {
       res.end('Internal Server Error');
     }
   } else {
-    // Return 404 
     res.statusCode = 404;
     res.end('404 Not Found\n');
   }
